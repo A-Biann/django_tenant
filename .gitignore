@@ -1,0 +1,4 @@
+data
+web/media
+web/tenant_locale
+.env
