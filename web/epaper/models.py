@@ -6,13 +6,13 @@ from django.db import models
 
 class EPaperEmail(models.Model):
     '''
-    電子報訂閱信箱
+    epaper mailbox
     '''
     email = models.EmailField('E-mail', max_length=255)
     
     class Meta:
-        verbose_name = '電子報訂閱信箱'
-        verbose_name_plural = '電子報訂閱信箱'
+        verbose_name = 'epaper subscribe mail'
+        verbose_name_plural = 'epaper subscribe mails'
 
     def __str__(self):
         return f'{self.email}'
