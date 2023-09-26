@@ -163,6 +163,8 @@ TENANT_APPS = (
     'core',
     'products',
     'epaper',
+    'django_q',
+    'django_tenants_q',
 )
 
 INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
@@ -170,3 +172,20 @@ INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in S
 SITE_ID = 1
 
 TENANT_MODEL = "customers.Client" # app.Model
+# TENANT_DOMAIN_MODEL = "customers.Client" # app.Model
+
+Q_CLUSTER = {
+    'name': 'example_tenant',
+    'workers': 8,
+    'recycle': 500,
+    'timeout': 60,
+    'compress': True,
+    'save_limit': 250,
+    'queue_limit': 500,
+    'cpu_affinity': 1,
+    'label': 'Django Q',
+    'redis': {
+        'host': 'redis',
+        'port': 6379,
+        'db': 0, }
+}
