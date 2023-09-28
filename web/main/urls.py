@@ -23,6 +23,7 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('products/', include(('products.urls', 'products'), namespace='products')),
     path('epaper/', include(('epaper.urls', 'epaper'), namespace='epaper')),
+    path('orders/', include(('orders.urls', 'orders'), namespace='orders')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

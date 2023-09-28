@@ -166,6 +166,8 @@ TENANT_APPS = (
     'epaper',
     'django_q',
     'django_tenants_q',
+    'orders',
+    'django_elasticsearch_dsl',
 )
 
 INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
