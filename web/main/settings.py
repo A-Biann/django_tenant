@@ -172,7 +172,7 @@ INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in S
 SITE_ID = 1
 
 TENANT_MODEL = "customers.Client" # app.Model
-# TENANT_DOMAIN_MODEL = "customers.Client" # app.Model
+TENANT_DOMAIN_MODEL = "customers.Domain"
 
 Q_CLUSTER = {
     'name': 'example_tenant',
