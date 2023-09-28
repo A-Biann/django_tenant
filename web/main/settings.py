@@ -150,6 +150,7 @@ SHARED_APPS = (
     'django_tenants',  # mandatory
     'customers', # you must list the app where your tenant model resides in
     'django.contrib.contenttypes',
+    'django_elasticsearch_dsl',
 )
 
 TENANT_APPS = (
@@ -198,3 +199,9 @@ EMAIL_HOST = 'mailserver'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
+
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
